@@ -17,3 +17,17 @@ button.addEventListener("click", async () => {
     }
 
 });
+
+const cloneButton = document.getElementById("cloneButton");
+
+cloneButton.addEventListener("click", async () => {
+
+    const response = await fetch("/clone", {
+        method: "POST"
+    });
+
+    const data = await response.json();
+
+    alert(data.message);
+
+});
