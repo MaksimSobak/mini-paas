@@ -15,30 +15,42 @@
     <h1>Mini PaaS</h1>
 
     <div class="field">
-        <label>URL</label>
+        <label>Repository URL</label>
+
         <input
             id="url"
             type="text"
-            placeholder="Your git repository with a Dockerfile"
+            placeholder="Git repository with Dockerfile"
         >
     </div>
 
+
     <div class="field">
-        <label>Folder</label>
+        <label>Project folder</label>
+
         <input
             id="folder"
             type="text"
             placeholder="Folder name"
         >
     </div>
+
+
     <div class="field">
+
         <button id="cloneButton">
-            Clone
+            Deploy
         </button>
+
     </div>
-    <div id="status"></div>
+
+
+    <div id="status">
+    </div>
+
 
 </div>
+
 
 <script src="/static/js/script.js"></script>
 
