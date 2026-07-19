@@ -22,10 +22,14 @@ cloneButton.addEventListener("click", async () => {
     }
 
 
+    status.textContent = "Deploying...";
+
+
     try {
 
-        const response = await fetch("/clone", {
+        const response = await fetch("/deploy", {
             method: "POST",
+
             headers: {
                 "Content-Type": "application/json"
             },
@@ -39,7 +43,13 @@ cloneButton.addEventListener("click", async () => {
 
         const data = await response.json();
 
-        status.textContent = data.message;
+
+        if (response.ok) {
+            status.textContent = data.message;
+        } else {
+            status.textContent =
+                data.message || "Deployment failed";
+        }
 
 
     } catch(error) {
@@ -51,6 +61,7 @@ cloneButton.addEventListener("click", async () => {
     }
 
 });
+
 
 console.log(urlInput);
 console.log(folderInput);
